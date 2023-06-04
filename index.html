@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshi Fitness</title>
+</head>
+
+<!-- TO FETCH FRM THE GOOGLE FONTS  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+
+<!-- USE THE EMMET==> link:css TO LINK TO EXTERNAL CSS FILE  -->
+<link rel="stylesheet" href="CSS/style.css">
+<style>
+    /* CSS Reset */
+    body{
+        font-family: 'Sigmar', cursive;
+        color: white; /*TO SEE THE TEXT (CUZ BACKGROUND-BLACK*/
+        margin: 0px;
+        padding: 0px;
+        background: url('img/man.jpg');
+    }
+    
+    .left{ /*U CAN EVEN CHECK LINE-NUMBER IN GOOGLE : INSPECT , THEN CLICK ON CLASS left , GO TO STYLES SECTION  , 
+        (check .left  ==> beside index.html:27 ) */
+
+        /* TO MAKE THE BELOW TEXT AS INLINE-ELEMENT , AND TO OCCUPY ONLY REQUIRED SPACE : CHANGE DISPLAY */
+        position: absolute;
+        display: inline-block;
+        /* border:2px solid green; */
+
+        left: 50px;
+        top:15px;
+        
+
+    }
+
+    /*SIZE OF THE LEFT IMAGE IS BIG , SO CHANGE THE WIDTH */
+    .left img{
+        width: 45px;
+        filter: invert(100%);
+    }
+
+    /*TO BRING THE TEXT OF THE IMAGE AT THE CENTER*/
+    .left div{
+        text-align: center;
+    }
+
+    .mid{
+        display: block;
+        width: 36%;
+        margin: 15px auto;
+        /*border: 3px solid purple; */
+    }
+
+    .right{
+        /*TO PUT THE RIGHT BUTTON , AT RIGHT SIDE : USE position:realtive (cuz IT CHANGES THE POSITION WRT TO PARENT (WHICH IS HEADER HERE)) */
+        position:absolute;
+        right: 36px;
+        top:30px;
+        display: inline-block;
+        /*border: 2px solid salmon; */
+    }
+
+    .navbar{
+        display: inline-block; /*IT IS INLINE , U CAN SET THE WIDTH ALSO */
+    }
+
+    /*TO GET ALL THE ELEMENTS IN  A SINGLE ROW , use ==> navbar li {} , SELECT EACH ELEMENT FROM ALL THE ROWS , SINCE THEY ARE NOW INLINE-BLOCK,
+    SINCE FROM ABOVE IT IS INLINE */
+    .navbar li{
+        display: inline-block;
+        font-size: 14px;
+    }
+
+    .navbar li a {
+        color: white;
+        text-decoration: none; /*TO REMOVE THAT IRRITATING-UNDERLINE */
+        padding: 35px 23px;
+    }
+
+    /*IF I AM ON A HOME(A BUTTON) , SO THEN UNDERLINE IT (IF ANYTHING IS ACTIVE )*/
+    .navbar li a:hover , navbar li a.active  {
+        text-decoration: underline;
+        color: pink;
+    }
+
+    /*TO ADD CSS TO THE RIGHT-SIDE-2-BUTTONS */
+    .btn{
+        font-family: 'Sigmar', cursive;
+        background-color: black;
+        margin: 0px 6px;
+        color: white;
+        padding: 4px 10px;
+        border:2px solid gold;
+        border-radius: 8px;
+        font-size: 12px;
+        cursor: pointer; /*TO AKE THE HAND SYMBOL , WHEN U OVER UR MOUSE ON THE 2 BUTTONS */
+    }
+
+    /*I WANT TO DO SOMETHING , WHEN I HOVER THE MOUSE ON 2 BUTTONS */
+    .btn:hover{
+        background-color: pink;
+    }
+
+    /*NOW WE WNAT TO STYLE THAT FORM (TO ENTER INTO GYM),*/
+    .container{
+        /*border: 2px solid purple; */
+        margin: 30px 49px;
+        padding: 17px 25px;
+        width: 40%;
+        border-radius: 3px;
+    }
+
+    .form-group input{
+        text-align: center;
+        display: block;
+        width: 300px;
+        padding: 10px;
+        border: 2px solid red;
+        margin: 10px auto;
+        font-size: 15px;
+        border-radius: 19px;
+        font-family: 'Sigmar', cursive;
+    }
+
+    .container h1{
+        text-align: center;
+    }
+
+    /*to make the submit button ==> appear at the center */
+    .container button{
+        display: block;
+        margin: auto;
+        width:23%
+    }
+</style>
+<body>
+    <!-- USE EMMET ==> header.header : to create a header class , in <header> -->
+    <header class="header">
+    <!-- TO CREATE A LOGO AT LEFT SIDE , USE EMMET==> div.left ==> to create a left class  -->
+        <div class="left">
+            <img src="img/fitness-gebd1c061e_640.png" alt=""> 
+            <div>
+                harshi Fitness
+            </div>
+        </div>
+
+        <!--  CENTER ==> IS NAVIGATION MENU ,  -->
+        <div class="mid">
+            <!-- INITIALLY CREATE A NAVIGATION BAR AT THE CENTER  -->
+            <ul class="navbar">
+                <!-- LET US CREATE 4 BUTTONS -->
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About-us</a></li>
+                <li><a href="#">Fitness Calculator</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>    
+        </div> 
+
+            <!--AT RIGHT ==> SOME BUTTON(LIKE CONTACT-US / SEARCH ) ==> using div.right -->
+        
+        <div class="right">
+            <!-- CREATE 2 BUTTONS AT THE RIGHT ==> USING EMMET ==> button.btn*2 -->
+            <button class="btn">Call us now</button>
+            <button class="btn">Email</button>
+        </div>
+
+    </header>
+
+    <!-- CREATE A CLASS CALLED container , inside <div>  ==> TO CREATE A FORM (SO USER CAN JOIN THE FORM OR NOT ) -->
+    <div class="container">
+        <h1>Join the best GYM of Vijaypur Now</h1>
+        <form action="noaction.php">
+            <!-- NOACTION.PHP  ==> BACKEND FILE (JUST IMAGINATION , FOR NOW) -->
+            <!-- div.form-group ==> EMMET TO USE TO CREATE A CLASS , form-group , under <div> -->
+            <div class="form-group">
+               <!-- input:text ==> EMMET USED TO GENERATEA INPUT IN THE FORM OF A TEXT  -->
+               <input type="text" placeholder="Enter your Name : ">
+            </div>
+            <div class="form-group">
+               <!-- input:text ==> EMMET USED TO GENERATEA INPUT IN THE FORM OF A TEXT  -->
+               <input type="text" placeholder="Enter your Age : ">
+            </div>
+            <div class="form-group">
+               <!-- input:text ==> EMMET USED TO GENERATEA INPUT IN THE FORM OF A TEXT  -->
+               <input type="text" placeholder="Enter your Gender : ">
+            </div>
+            <div class="form-group">
+               <!-- input:text ==> EMMET USED TO GENERATEA INPUT IN THE FORM OF A TEXT  -->
+               <input type="text" placeholder="Enter your Locality : ">
+            </div>
+            <div class="form-group">
+               <!-- input:text ==> EMMET USED TO GENERATEA INPUT IN THE FORM OF A TEXT  -->
+               <input type="text" placeholder="Enter your Phone-no : ">
+            </div>
+            <div class="form-group">
+               <!-- input:text ==> EMMET USED TO GENERATEA INPUT IN THE FORM OF A TEXT  -->
+               <input type="text" placeholder="Enter your Email-Id : ">
+            </div>
+
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
